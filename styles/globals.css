@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts - Ravi */
+
+@font-face {
+  font-family: "Ravi";
+  src: url("../assets/fonts/Ravi/woff2/Ravi-Thin.woff2") format("woff2");
+  font-weight: 100; /* Ultralight weight */
+}
+
+@font-face {
+  font-family: "Ravi";
+  src: url("../assets/fonts/Ravi/woff2/Ravi-Light.woff2") format("woff2");
+  font-weight: 200; /* Thin weight */
+}
+
+@font-face {
+  font-family: "Ravi";
+  src: url("../assets/fonts/Ravi/woff2/Ravi-Regular.woff2") format("woff2");
+  font-weight: 300; /* Regular weight */
+}
+
+@font-face {
+  font-family: "Ravi";
+  src: url("../assets/fonts/Ravi/woff2/Ravi-Medium.woff2") format("woff2");
+  font-weight: 400; /* Medium weight */
+}
+
+@font-face {
+  font-family: "Ravi";
+  src: url("../assets/fonts/Ravi/woff2/Ravi-SemiBold.woff2") format("woff2");
+  font-weight: 500; /* Heavy weight */
+}
+
+@font-face {
+  font-family: "Ravi";
+  src: url("../assets/fonts/Ravi/woff2/Ravi-Bold.woff2") format("woff2");
+  font-weight: 600; /* Extrabold weight */
+}
+
+@font-face {
+  font-family: "Ravi";
+  src: url("../assets/fonts/Ravi/woff2/Ravi-Black.woff2") format("woff2");
+  font-weight: 700; /* Extrablack weight */
+}
+
+@font-face {
+  font-family: "Ravi";
+  src: url("../assets/fonts/Ravi/woff2/Ravi-ExtraBlack.woff2") format("woff2");
+  font-weight: 800; /* Semibold weight */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Ravi";
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
+}
