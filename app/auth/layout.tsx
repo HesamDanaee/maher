@@ -7,7 +7,7 @@ interface Props {
 
 const authLayout = ({ children }: Props) => {
   return (
-    <main className="w-full min-h-[100vh] flex justify-center items-center bg-primary">
+    <main className="w-full flex justify-center items-center">
       <Welcome>{children}</Welcome>
     </main>
   );

@@ -1,7 +1,12 @@
 import Signup from "@/containers/auth/Signup";
+import { Metadata } from "next";
 
-const signup = () => {
+export const metadata: Metadata = {
+  title: "ثبت نام",
+};
+
+const SignupPage = async () => {
   return <Signup />;
 };
 
-export default signup;
+export default SignupPage;

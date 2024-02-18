@@ -7,7 +7,10 @@ import data from "@/constants/content.json";
 
 const NotFound = () => {
   const {
-    404: { title, link },
+    404: {
+      title,
+      link: { text, href },
+    },
   } = data;
   return (
     <main className="w-full h-full bg-primary flex justify-center items-center">
@@ -22,9 +25,9 @@ const NotFound = () => {
           />
           <h1 className="text-4xl text-white font-black">{title}</h1>
         </div>
-        <Link href={"/"}>
+        <Link href={href}>
           <p className="link link-hover text-sm text-accent font-medium">
-            {link}
+            {text}
           </p>
         </Link>
       </article>

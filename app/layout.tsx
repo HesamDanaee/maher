@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import Toast from "@/components/common/Toast";
+import ThemeProvider from "@/components/ThemeProvider";
+import SWRProvider from "@/components/SWRProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,14 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="pe"
-      data-theme="dark"
-      style={{
-        direction: "rtl",
-      }}
-    >
-      <body>{children}</body>
-    </html>
+    <ThemeProvider>
+      <SWRProvider>
+        <body>
+          <Toast />
+          {children}
+        </body>
+      </SWRProvider>
+    </ThemeProvider>
   );
 }

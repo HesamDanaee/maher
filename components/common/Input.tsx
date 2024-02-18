@@ -1,40 +1,62 @@
-import { Path, Controller, UseFormRegister } from "react-hook-form";
+import { Path, Controller, FieldValues, Control } from "react-hook-form";
 
-import { IFormLogin } from "@/containers/auth/Login";
-import { IFormSignUp } from "@/containers/auth/Signup";
-
-interface Props {
-  label: Path<IFormLogin | IFormSignUp>;
+interface InputProps<T extends FieldValues> {
+  label?: string;
+  name: Path<T>;
   placeholder: string;
-  required: boolean;
   type: string;
-  register: UseFormRegister<IFormLogin | IFormSignUp>;
+  control: Control<T>;
+  style?: string;
+  labelStyle?: string;
+  inputStyle?: string;
 }
 
-const Input = ({ label, placeholder, required, type, register }: Props) => {
+const Input = <T extends FieldValues>({
+  label,
+  name,
+  placeholder,
+  type,
+  control,
+  style,
+  labelStyle,
+  inputStyle,
+}: InputProps<T>) => {
   return (
     <div
-      className={`flex gap-y-4 ${
+      className={`flex relative gap-y-4 ${
         type !== "checkbox" ? "flex-col" : "gap-x-3 items-center mt-2"
-      }`}
+      } ${style}`}
     >
-      <label className="text-sm text-primary font-[600]">{label}</label>
+      <label
+        className={labelStyle ? labelStyle : "text-sm text-primary font-[600]"}
+      >
+        {label}
+      </label>
+
       <Controller
-        name={label}
+        name={name}
+        control={control}
         render={({ field, formState: { errors } }) => (
           <input
             {...field}
-            {...register}
-            required={required}
-            placeholder={placeholder}
+            placeholder={
+              errors[`${name}`]
+                ? (errors[`${name}`]?.message as string)
+                : placeholder
+            }
             type={type}
-            aria-invalid={errors[`${label}`] ? "true" : "false"}
+            aria-invalid={errors[`${name}`] ? "true" : "false"}
             autoComplete="on"
             className={`text-primary ${
               type === "checkbox"
                 ? "checkbox checkbox-primary checkbox-xs"
-                : "input input-large min-w-[300px] input-primary focus:border-accent focus:outline-none focus:shadow-sm placeholder:text-xs text-sm shadow-md transition-[border] duration-100 ease-linear"
-            }  `}
+                : `input ${
+                    errors[`${name}`] && "input-error placeholder:text-red-600"
+                  } ${inputStyle} w-full`
+            }  
+             
+            ${errors}
+            `}
           />
         )}
       />

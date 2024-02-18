@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 
 function useLocal<T>({ key }: Props) {
   const [local, setLocal] = useState<T | string>(() => {
-    const item = localStorage.getItem(key);
+    const item = global.window !== undefined && localStorage.getItem(key);
     if (item) {
       return JSON.parse(item);
     }

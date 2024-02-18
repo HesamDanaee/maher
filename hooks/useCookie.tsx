@@ -1,4 +1,4 @@
-// useCookies.ts
+"use client";
 
 import { useState } from "react";
 import Cookies from "js-cookie";

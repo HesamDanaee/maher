@@ -1,12 +1,11 @@
-import AuthGuard from "@/components/auth/AuthGaurd";
-import Panel from "@/containers/panel/Panel";
+"use client";
 
-export default function PanelPage() {
-  return (
-    <main className="w-full h-full">
-      <AuthGuard>
-        <Panel />
-      </AuthGuard>
-    </main>
-  );
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
+export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => router.push("panel/customers"), [router]);
+  return <main className="w-full h-full"></main>;
 }

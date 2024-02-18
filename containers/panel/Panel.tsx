@@ -1,31 +1,53 @@
-import React from "react";
+"use client";
 
-const Panel = () => {
+// Globals
+import { ReactNode } from "react";
+
+// Components
+import Goods from "./components/goods/Goods";
+import Invoice from "./components/invoice/Invoice";
+import TaxPayers from "./components/taxpayers/TaxPayers";
+import Customers from "./components/customers/Customers";
+import Header from "./components/Header";
+
+// static data
+import content from "@/constants/content.json";
+
+interface Tabs {
+  invoice: ReactNode;
+  customers: ReactNode;
+  taxpayers: ReactNode;
+  goods: ReactNode;
+}
+
+interface Props {
+  tab:
+    | ("invoice" | ["invoice", "manual", "file"])
+    | "customers"
+    | "goods"
+    | "taxpayers";
+}
+
+const Panel = ({ tab }: Props) => {
+  const {
+    panel: {
+      header: { navbar },
+    },
+  } = content;
+
+  const tabs: Tabs = {
+    invoice: <Invoice />,
+    customers: <Customers />,
+    goods: <Goods slugs={tab as string[]} />,
+    taxpayers: <TaxPayers />,
+  };
+
   return (
-    <main className="drawer w-full h-full bg-primary  flex justify-center">
-      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content w-full h-full bg-accent flex justify-center items-center">
-        {/* Page content here */}
-        <label htmlFor="my-drawer" className="btn btn-primary drawer-button">
-          Open drawer
-        </label>
-      </div>
-      <div className="drawer-side ">
-        <label
-          htmlFor="my-drawer"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-          {/* Sidebar content here */}
-          <li>
-            <a>Sidebar Item 1</a>
-          </li>
-          <li>
-            <a>Sidebar Item 2</a>
-          </li>
-        </ul>
-      </div>
+    <main className="w-full min-h-full bg-primary">
+      <Header navbar={navbar} tab={Array.isArray(tab) ? tab[0] : tab} />
+      <article className="text-white w-full h-[90vh]">
+        {tabs[Array.isArray(tab) ? tab[0] : tab]}
+      </article>
     </main>
   );
 };

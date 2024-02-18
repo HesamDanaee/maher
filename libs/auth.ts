@@ -1,14 +1,36 @@
-import useSWR from "swr";
+// import fetcher from "@/utils/network";
 
-const fetchData = (url: string) => fetch(url).then((res) => res.json());
+// import { generateFormData } from "@/utils/common";
+// import API_URLS from "@/configs/apiConfig";
 
-export function useGetPosts(id?: string) {
-  const url = `https://jsonplaceholder.typicode.com/posts/${id ? id : ""}`;
-  const { data, error, isLoading } = useSWR(url, fetchData);
+// export async function loginUser(
+//   data: { [key: string]: string },
+//   handleLogin: (data: LoginRes) => void
+// ) {
+//   try {
+//     const formData = generateFormData(data);
+//     const response = await fetcher(API_URLS.login, handleLogin, {
+//       body: formData,
+//     });
+//     if (response) return response;
+//   } catch (err) {
+//     console.error("Error handling login request:", err);
+//     throw err;
+//   }
+// }
 
-  return {
-    posts: data,
-    isLoading,
-    isError: error,
-  };
-}
+// export async function signupUser(
+//   data: { [key: string]: string },
+//   handleSignUp: (data: LoginRes) => void
+// ) {
+//   try {
+//     const formData = generateFormData(data);
+//     const response = await fetcher(API_URLS.signup, handleSignUp, {
+//       body: formData,
+//     });
+//     if (response) return response;
+//   } catch (err) {
+//     console.error("Error handling login request:", err);
+//     throw err;
+//   }
+// }

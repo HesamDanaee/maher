@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 interface Props {
@@ -6,7 +8,7 @@ interface Props {
 
 function useSession<T>({ key }: Props) {
   const [local, setLocal] = useState<T | string>(() => {
-    const item = sessionStorage.getItem(key);
+    const item = global.window !== undefined && localStorage.getItem(key);
     if (item) {
       return JSON.parse(item);
     }
@@ -19,7 +21,10 @@ function useSession<T>({ key }: Props) {
     setLocal(item);
   };
 
-  return [local, setItem];
+  return {
+    data: local,
+    setItem,
+  };
 }
 
 export default useSession;
