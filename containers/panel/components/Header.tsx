@@ -21,7 +21,7 @@ const Header = ({ navbar, tab }: Props) => {
       </div>
       <Navbar navbar={navbar} tab={tab} />
       <div className="flex flex-row items-center justify-center max-lg:justify-between max-sm:justify-end col-start-10 col-end-12 max-lg:col-start-9 max-md:col-start-8">
-        <div className="flex flex-row items-center justify-center max-sm:hidden">
+        <div className="flex flex-row gap-x-8 items-center justify-center max-sm:hidden">
           <Notification />
           <SettingNav />
           <Profile />

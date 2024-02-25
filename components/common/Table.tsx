@@ -12,15 +12,21 @@ interface Props {
 
 const Table = ({ size, variant, thData, tbData, noDataText }: Props) => {
   return (
-    <div className="w-full flex justify-center items-center min-h-[50vh] max-h-[60vh]  max-sm:hidden overflow-y-auto styled_Scroll">
-      {tbData.length === 0 ||
+    <div
+      className={`w-full h-full overflow-auto max-sm:hidden styled_Scroll ${
+        tbData.length > 0 &&
+        tbData[0]?.length === 0 &&
+        "flex justify-center items-center"
+      }`}
+    >
+      {/* {tbData.length === 0 ||
         (tbData[0]?.length === 0 && (
           <div className="flex flex-col gap-y-6 items-center rtl">
             <Image src={documentI} width={200} height={200} alt="document" />
             <h3 className="text-xl font-[700]">{noDataText}</h3>
           </div>
-        ))}
-      {tbData.length > 0 && tbData[0]?.length > 0 && (
+        ))} */}
+      {tbData.length > 0 && tbData[0]?.length > 0 ? (
         <table
           className={`table text-center ${
             size === "xs"
@@ -83,6 +89,11 @@ ${
             )}
           </tbody>
         </table>
+      ) : (
+        <div className="flex flex-col gap-y-6 items-center rtl">
+          <Image src={documentI} width={200} height={200} alt="document" />
+          <h3 className="text-xl font-[700]">{noDataText}</h3>
+        </div>
       )}
     </div>
   );

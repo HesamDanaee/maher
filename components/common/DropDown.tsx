@@ -40,12 +40,12 @@ const DropDown = ({
         size="sm"
         type="button"
         variant="wide"
-        style="w-full h-full m-1 btn bg-transparent border-none hover:bg-transparent"
+        style="w-full h-full m-1 btn p-0 bg-transparent border-none hover:bg-transparent"
       >
         {children}
       </Button>
 
-      <div className="w-auto h-auto p-2 dropdown-content z-[1]">{data}</div>
+      <div className="w-full h-auto p-2 dropdown-content z-[1]">{data}</div>
     </div>
   );
 };

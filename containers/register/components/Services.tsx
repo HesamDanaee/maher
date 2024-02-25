@@ -48,7 +48,7 @@ const Services = () => {
               name === "unitOfGoods" ? (
                 <Select
                   options={mockData}
-                  style="w-full bg-primary border-[1px] border-secondary outline-none focus:outline-none focus:border-[1px] focus:border-accent"
+                  style={`${inputStyle} mt-3 h-[48px]`}
                   DropDownStyle="w-full"
                 />
               ) : (

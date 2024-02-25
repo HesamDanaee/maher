@@ -26,8 +26,8 @@ const Step2 = () => {
   const { control } = useForm();
 
   return (
-    <div className="flex flex-col rtl gap-y-16">
-      <h1 className="text-secondary text-3xl font-[700] text-center ">
+    <div className="flex flex-col col-start-2 col-end-12 row-start-2 row-end-7 rtl gap-y-8">
+      <h1 className="text-secondary text-3xl font-[700] text-center">
         {title}
       </h1>
 
@@ -35,7 +35,7 @@ const Step2 = () => {
         <form>
           <h3 className="text-secondary">{formTitle}</h3>
 
-          <div className="grid grid-cols-2 grid-rows-6 gap-x-8 gap-y-4">
+          <div className="grid grid-cols-2 grid-rows-6 gap-x-8 gap-y-4 items-end">
             {inputs.map(({ name, title, type, options, placeholder }) => (
               <div key={uuid()} className="w-full">
                 {type === "string" ? (
@@ -64,7 +64,7 @@ const Step2 = () => {
             variant="wide"
             text={submit}
             color="secondary"
-            style="font-[700] col-start-13 col-end-9 mt-12 place-self-end"
+            style="font-[700] col-start-13 col-end-9 mt-7"
 
             // state={errors ? "disabled" : "active"}
           />

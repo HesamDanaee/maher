@@ -49,7 +49,7 @@ const Setting = ({ params: { tab } }: Props) => {
 
       <SettingTab selectedTab={tab} />
 
-      <div className="grid grid-cols-3 grid-rows-12 col-start-4 col-end-13 row-start-2 row-end-13 border-t-[2px] border-base-100">
+      <div className="grid grid-cols-3 grid-rows-12 col-start-4 max-sm:col-start-1 col-end-13 row-start-2 row-end-13 border-t-[2px] border-base-100">
         <div className="col-start-1 col-end-4 row-start-1 row-end-12">
           {tabs[tab]}
         </div>

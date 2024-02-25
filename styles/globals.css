@@ -6,49 +6,49 @@
 
 @font-face {
   font-family: "Ravi";
-  src: url("../assets/fonts/Ravi/woff2/Ravi-Thin.woff2") format("woff2");
+  src: url("../public/fonts/Ravi/woff2/Ravi-Thin.woff2") format("woff2");
   font-weight: 100; /* Ultralight weight */
 }
 
 @font-face {
   font-family: "Ravi";
-  src: url("../assets/fonts/Ravi/woff2/Ravi-Light.woff2") format("woff2");
+  src: url("../public/fonts/Ravi/woff2/Ravi-Light.woff2") format("woff2");
   font-weight: 200; /* Thin weight */
 }
 
 @font-face {
   font-family: "Ravi";
-  src: url("../assets/fonts/Ravi/woff2/Ravi-Regular.woff2") format("woff2");
+  src: url("../public/fonts/Ravi/woff2/Ravi-Regular.woff2") format("woff2");
   font-weight: 300; /* Regular weight */
 }
 
 @font-face {
   font-family: "Ravi";
-  src: url("../assets/fonts/Ravi/woff2/Ravi-Medium.woff2") format("woff2");
+  src: url("../public/fonts/Ravi/woff2/Ravi-Medium.woff2") format("woff2");
   font-weight: 400; /* Medium weight */
 }
 
 @font-face {
   font-family: "Ravi";
-  src: url("../assets/fonts/Ravi/woff2/Ravi-SemiBold.woff2") format("woff2");
+  src: url("../public/fonts/Ravi/woff2/Ravi-SemiBold.woff2") format("woff2");
   font-weight: 500; /* Heavy weight */
 }
 
 @font-face {
   font-family: "Ravi";
-  src: url("../assets/fonts/Ravi/woff2/Ravi-Bold.woff2") format("woff2");
+  src: url("../public/fonts/Ravi/woff2/Ravi-Bold.woff2") format("woff2");
   font-weight: 600; /* Extrabold weight */
 }
 
 @font-face {
   font-family: "Ravi";
-  src: url("../assets/fonts/Ravi/woff2/Ravi-Black.woff2") format("woff2");
+  src: url("../public/fonts/Ravi/woff2/Ravi-Black.woff2") format("woff2");
   font-weight: 700; /* Extrablack weight */
 }
 
 @font-face {
   font-family: "Ravi";
-  src: url("../assets/fonts/Ravi/woff2/Ravi-ExtraBlack.woff2") format("woff2");
+  src: url("../public/fonts/Ravi/woff2/Ravi-ExtraBlack.woff2") format("woff2");
   font-weight: 800; /* Semibold weight */
 }
 
@@ -144,4 +144,19 @@ Scrollbar
 .bg-blur {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+}
+
+/* - - - Scrollbar design - - - */
+
+.sc::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.sc::-webkit-scrollbar-track {
+}
+
+.sc::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 2px;
 }

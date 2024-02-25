@@ -7,7 +7,7 @@ const NewInvoice = () => {
   const step = useParams<{ tab: [string, string, "manual" | "file"] }>().tab[1];
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full grid grid-cols-12 grid-rows-7">
       {step === "manual" ? <Step1 /> : <Step2 />}
     </div>
   );

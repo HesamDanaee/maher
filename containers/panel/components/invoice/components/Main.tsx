@@ -10,6 +10,7 @@ interface Props {
   options: string[];
   searchInput: string;
   tableHeader: string[];
+
   modalData: {
     Title: string;
     buttons: {
@@ -40,13 +41,13 @@ const Main = ({
   const { manual, file } = modalData.buttons;
 
   return (
-    <div className="w-full grid grid-cols-12 gird-rows-6">
+    <div className="w-full h-full grid grid-cols-12 gird-rows-6">
       {/* Modal here */}
       <Modal id="invoice-modal" style="absolute">
         <NewInvoiceModal title={modalData.Title} options={[manual, file]} />
       </Modal>
 
-      <div className="max-sm:w-full flex max-sm:flex-col justify-between items-center col-start-1 col-end-13 row-start-1 row-end-2">
+      <div className="max-sm:w-full flex max-sm:flex-col justify-between items-center col-start-1 col-end-13 row-start-2 row-end-3">
         <div className="w-1/3 max-sm:w-full relative">
           <input
             className="w-full bg-primary text-sm font-[400] placeholder:text-xs placeholder:font-[300] border-[1px] border-secondary focus:border-accent input input-md focus:outline-none rtl"
@@ -80,10 +81,10 @@ const Main = ({
 
       {/* Invoice List */}
 
-      <div className="col-start-1 col-end-12 row-start-2 row-end-6">
+      <div className="col-start-1 col-end-12 row-start-3 row-end-7">
         <Table
           thData={tableHeader}
-          tbData={[[]]}
+          tbData={[]}
           noDataText={noDataText}
           size="sm"
           variant="zebra"

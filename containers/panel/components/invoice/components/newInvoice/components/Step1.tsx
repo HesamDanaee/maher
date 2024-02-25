@@ -42,7 +42,7 @@ const Step1 = () => {
   const onSubmit = (data: any) => console.log(data);
 
   return (
-    <div className="flex flex-col rtl gap-y-16">
+    <div className="flex flex-col col-start-2 col-end-12 row-start-2 row-end-7 rtl gap-y-8">
       <h1 className="text-secondary text-3xl font-[700] text-center">
         {title}
       </h1>

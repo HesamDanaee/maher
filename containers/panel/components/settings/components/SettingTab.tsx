@@ -34,7 +34,7 @@ const SettingTab = ({ selectedTab }: Props) => {
   ];
 
   return (
-    <div className="flex justify-end col-start-1 col-end-4 row-start-2 row-end-13 border-r-[2px] border-t-[2px] border-base-100">
+    <div className="max-sm:hidden flex justify-end col-start-1 col-end-4 row-start-2 row-end-13 border-r-[2px] border-t-[2px] border-base-100">
       <ul className="w-2/3 h-1/2 flex flex-col gap-y-6 items-center py-10">
         {tabs.map(({ name, href }, i) => (
           <Link
@@ -42,7 +42,9 @@ const SettingTab = ({ selectedTab }: Props) => {
             key={uuid()}
             className={`
           w-2/3 text-center p-3 hover:cursor-pointer hover:bg-base-100 hover:text-secondary text-sm text-secondary font-normal rounded-md
-         transition duration-75 ease-linear`}
+         transition duration-75 ease-linear border-[1px] border-secondary ${
+           selectedTab[0] !== href && "border-transparent"
+         }`}
           >
             <li className="flex flex-row items-center justify-between">
               {icons[i]}

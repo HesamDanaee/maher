@@ -19,12 +19,12 @@ export function time() {
 
 // - - - - - Common - - - - - //
 
-export function filter<X>({
+export function filter({
   data,
-  filter,
+  item,
 }: {
-  data: X[];
-  filter: (el: X) => boolean;
+  data: string[];
+  item: string;
 }) {
-  return data.filter(filter);
+  return data.filter((it) => it.includes(item.toLowerCase()));
 }

@@ -21,15 +21,7 @@ const Select = ({ size, options, style, DropDownStyle }: Props) => {
       style={DropDownStyle}
       data={
         <ul
-          className={`${
-            size === "sm"
-              ? "w-[100px]"
-              : size === "md"
-              ? "w-[200px]"
-              : size === "lg"
-              ? "w-[300px]"
-              : size
-          } text-secondary flex flex-col items-center bg-primary text-end border-[1px] border-secondary rounded-md`}
+          className={`w-full max-h-[250px] overflow-y-auto text-secondary flex flex-col items-center bg-primary text-end border-[1px] border-secondary rounded-md sc`}
         >
           {options.map((opt, i) => (
             <li
