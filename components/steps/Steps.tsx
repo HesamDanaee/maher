@@ -45,11 +45,7 @@ const Steps = ({ links, steps, direction, bg, size }: Props) => {
                     : "col-start-1 col-end-4 row-start-2 row-end-3"
                 } justify-self-center self-center`}
               >
-                <Link href={links[index]}>
-                  <h5 className="text-primary text-lg font-bold hover:text-accent transition duration-200 ease-out">
-                    {step}
-                  </h5>
-                </Link>
+                <h5 className="text-primary text-lg font-bold">{step}</h5>
               </div>
               <div
                 className={`${

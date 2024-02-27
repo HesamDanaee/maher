@@ -1,11 +1,18 @@
+import { Metadata } from "next";
 import Register from "@/containers/register/Register";
+import { registerRouteMetadata } from "@/constants/metadata";
 
 interface Props {
   params: {
-    slug: [
-      "signup" | "uniqueIdentifier" | "services" | "finalStep",
-      "individual" | "legalEnteties"
-    ];
+    slug: RegisterSlugs;
+  };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const param: RegisterParams = params.slug[0];
+
+  return {
+    title: registerRouteMetadata[param],
   };
 }
 
