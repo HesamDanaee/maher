@@ -41,13 +41,13 @@ const Main = ({
   const { manual, file } = modalData.buttons;
 
   return (
-    <div className="w-full h-full grid grid-cols-12 gird-rows-6">
+    <div className="w-full h-full grid grid-cols-12 gird-rows-6 max-sm:grid-rows-12">
       {/* Modal here */}
       <Modal id="invoice-modal" style="absolute">
         <NewInvoiceModal title={modalData.Title} options={[manual, file]} />
       </Modal>
 
-      <div className="max-sm:w-full flex max-sm:flex-col justify-between items-center col-start-1 col-end-13 row-start-2 row-end-3">
+      <div className="max-sm:w-full flex max-sm:flex-col justify-evenly items-center col-start-1 col-end-13 row-start-2 max-sm:row-start-1 row-end-3 max-sm:row-end-5 gap-y-1">
         <div className="w-1/3 max-sm:w-full relative">
           <input
             className="w-full bg-primary text-sm font-[400] placeholder:text-xs placeholder:font-[300] border-[1px] border-secondary focus:border-accent input input-md focus:outline-none rtl"
@@ -58,11 +58,11 @@ const Main = ({
           </span>
         </div>
 
-        <div className="flex max-sm:w-full max-sm:flex-col gap-x-3">
+        <div className="flex max-sm:w-full max-sm:flex-col gap-x-3 gap-y-3">
           <Select
             size="md"
             options={options}
-            style="w-[200px] flex justify-around bg-primary border-[1px] hover:border-accent border-secondary outline-none focus:outline-none focus:border-[1px] focus:border-accent h-full"
+            style="md:w-[200px] flex justify-around bg-primary border-[1px] hover:border-accent border-secondary outline-none focus:outline-none focus:border-[1px] focus:border-accent h-full"
           />
           <Button
             onClick={() =>
@@ -81,7 +81,7 @@ const Main = ({
 
       {/* Invoice List */}
 
-      <div className="col-start-1 col-end-12 row-start-3 row-end-7">
+      <div className="col-start-1 col-end-12 row-start-3 max-sm:row-start-4 row-end-7 max-sm:row-end-12">
         <Table
           thData={tableHeader}
           tbData={[]}

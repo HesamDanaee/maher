@@ -23,12 +23,12 @@ const Customers = () => {
   } = content;
 
   return (
-    <div className="w-full h-full grid grid-cols-12 grid-rows-6">
+    <div className="w-full h-full grid grid-cols-12 grid-rows-6 max-sm:grid-rows-12">
       <Modal id="invoice-modal" style="absolute">
         <NewCustomerModal title="" />
       </Modal>
 
-      <div className="grid grid-cols-12 grid-rows-6 col-start-3 col-end-11 row-start-2 row-end-6 max-2xl:col-start-2 max-2xl:col-end-12">
+      <div className="grid grid-cols-12 grid-rows-6 max-sm:grid-rows-12 col-start-3 col-end-11 row-start-2 max-sm:row-start-1 row-end-6 max-sm:row-end-12 max-2xl:col-start-2 max-2xl:col-end-12 max-sm:py-4">
         <div className="flex max-sm:flex-col gap-y-4 justify-between items-start col-start-1 col-end-13 row-start-1 row-end-2">
           <div className="w-1/3 max-sm:w-full relative">
             <input
@@ -56,7 +56,7 @@ const Customers = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center col-start-1 col-end-13 row-start-3 row-end-6">
+        <div className="flex flex-col items-center col-start-1 col-end-13 row-start-3 row-end-6 max-sm:row-end-12">
           <Table
             noDataText={table.noDataText}
             size="md"

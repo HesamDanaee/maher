@@ -67,14 +67,14 @@ const TaxPayers = () => {
   );
 
   return (
-    <main className="w-full h-full grid grid-cols-12 grid-rows-6 justify-center">
-      <div className="grid grid-cols-12 grid-rows-6 col-start-3 col-end-11 row-start-2 max-sm:row-start-1 row-end-6 max-2xl:col-start-2 max-2xl:col-end-12">
-        <div className="flex flex-col max-sm:justify-center justify-start col-start-1 col-end-13 row-start-1 row-end-2">
+    <main className="w-full h-full grid grid-cols-12 grid-rows-6 max-sm:grid-rows-12 justify-center">
+      <div className="grid grid-cols-12 grid-rows-6 max-sm:grid-rows-12 col-start-3 col-end-11 row-start-2 max-sm:row-start-1 row-end-6 max-sm:row-end-12 max-2xl:col-start-2 max-2xl:col-end-12">
+        <div className="flex flex-col max-sm:justify-center justify-start col-start-1 col-end-13 row-start-1 row-end-2 max-sm:row-end-4">
           <Button
             size="md"
             type="button"
             color="accent"
-            style="hover:bg-primary hover:border-[1px] hover:border-accent hover:text-accent group transition duration-150 ease-in self-end"
+            style="hover:bg-primary max-sm:w-full hover:border-[1px] hover:border-accent hover:text-accent group transition duration-150 ease-in self-end"
           >
             <PlusCircle
               fill="bg-secondary"
@@ -84,7 +84,7 @@ const TaxPayers = () => {
           </Button>
         </div>
 
-        <div className="flex flex-col items-center gap-y-4 col-start-1 col-end-13 row-start-2 max-sm:row-start-2 row-end-7 overflow-y-auto">
+        <div className="flex flex-col items-center gap-y-4 col-start-1 col-end-13 row-start-2 max-sm:row-start-4 row-end-7 max-sm:row-end-13 overflow-y-auto">
           {mockDataMobile.map((dt) => (
             <DataCard key={uuid()} data={dt} />
           ))}
