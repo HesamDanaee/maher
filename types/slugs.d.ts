@@ -5,3 +5,4 @@ type RegisterSlugs = [
   "individual" | "legalEnteties",
 ];
 type RegisterParams = "signup" | "uniqueIdentifier" | "services" | "finalStep";
+type RegisterParams2 = "individual" | "legalEnteties";

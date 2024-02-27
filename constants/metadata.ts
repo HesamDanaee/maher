@@ -4,3 +4,8 @@ export const registerRouteMetadata = {
   "services": "گروه کالا و خدمات",
   "finalStep": "پایان",
 };
+
+export const registerRouteMetadata2 = {
+  "individual": "حقیقی",
+  "legalEnteties": "حقوقی",
+};
